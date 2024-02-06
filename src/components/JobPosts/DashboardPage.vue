@@ -4,7 +4,7 @@ import * as JobListingApi from '../../api/jobs'
 import DialogPostJob from './DialogPostJob.vue'
 
 const jobListings = ref(<JobListings[]>[])
-const openDialogJob = ref(true)
+const openDialogJob = ref(false)
 // function increment() {
 // 	clickCount.value += 1
 // 	return clickCount.value
@@ -18,11 +18,18 @@ interface JobListings {
 }
 
 onMounted(async () => {
-	jobListings.value = await JobListingApi.getAllJobListings()
+	fetchDashboard()
 })
 
-function DialogJobClosed() {
+async function fetchDashboard() {
+	jobListings.value = await JobListingApi.getAllJobListings()
+}
+
+function DialogJobClosed(val: boolean) {
 	openDialogJob.value = false
+	if (val) {
+		fetchDashboard()
+	}
 }
 </script>
 <template>
