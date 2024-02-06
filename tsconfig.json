@@ -1,0 +1,10 @@
+{
+	"extends": "@quasar/app-vite/tsconfig-preset",
+	"compilerOptions": {
+		"baseUrl": ".", // BUILD SETTINGS IN QUASAR.CONFIG
+		"paths": {
+			"@/*": ["src/*"]
+		},
+		"allowJs": true
+	}
+}
