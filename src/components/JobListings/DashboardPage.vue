@@ -46,7 +46,7 @@ function DialogJobClosed(val: boolean) {
 				</q-item-section>
 			</q-item>
 			<q-separator />
-			<q-card-section> {{ jobs.description }} </q-card-section>
+			<q-card-section class="description"><span v-html="jobs.description"></span></q-card-section>
 			<template v-if="!jobs.validated_at">
 				<q-separator />
 				<q-card-actions>
@@ -64,4 +64,8 @@ function DialogJobClosed(val: boolean) {
 .my-card
   width: 100%
   max-width: 250px
+
+.description
+  max-height: 350px
+  overflow-y: auto
 </style>

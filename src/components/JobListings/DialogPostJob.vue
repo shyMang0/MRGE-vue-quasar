@@ -65,6 +65,11 @@ async function saveChanges() {
 	loading.value = false
 }
 
+function addTemplate() {
+	edit_state.value.description =
+		' Als Senior Customer Success Manager beim shopping24 commerce network übernimmst Du eine strategische Rolle bei der Entwicklung und Pflege unserer Advertiser. Du arbeitest eng mit bestehenden und potenziellen Partnern zusammen, um die Marketingziele zu verstehen und maßgeschneiderte Lösungen anzubieten. Deine Aufgaben umfassen:<ul><li>Partnerschaftsentwicklung: Identifikation, Akquisition und Betreuung neuer Geschäftspartner, einschließlich E-Commerce-Unternehmen, Brands und Retailer.</li><li>Strategische Beratung: Verstehen der Geschäftsanforderungen der Partner und Beratung hinsichtlich der bestmöglichen Integration in unser commerce network Entwicklung von individuellen Strategien zur Steigerung der Sichtbarkeit und des Umsatzes unserer Partner.</li><li>Beziehungsaufbau mit Shops und passenden Publishern: Aufbau und Pflege langfristiger Partnerschaften. Regelmäßiger Austausch, Beziehungspflege und proaktive Kommunikation, um Partnerschaften zu stärken.</li><li>KPI Management: Analyse der Leistung von Partnerschaften. Identifikation von Chancen zur Optimierung von Programmen und zur Erreichung der definierten Ziele.</li><li>Verhandlungsführung: Verhandlungen von Partnerschaftsverträgen, Konditionen und Vereinbarungen. Sicherstellen einer Win-Win-Situation für unsere Partner und uns.</li><li>Teamübergreifende Zusammenarbeit: Zusammenarbeit mit internen Teams wie Sales, Marketing und Technologie, um sicherzustellen, dass Partneranforderungen erfüllt und optimale Lösungen angeboten werden.</li><li>Projektmanagement: Entwicklung neuer potentieller Geschäftsbereiche in Zusammenarbeit mit den Tech-Teams.</li><li>Marktbeobachtung: Kontinuierliche Beobachtung der E-Commerce- und digitalen Marketingbranche, um Trends und Entwicklungen zu identifizieren, die für die Partnerschaftsstrategie relevant sein könnten.</li></ul>'
+}
+
 interface JobListings {
 	id?: string
 	title: string
@@ -100,8 +105,21 @@ interface JobListings {
 						</q-card-section>
 						<q-card-section class="row q-px-sm q-py-sm q-col-gutter-xs">
 							<div class="col-sm-12 col-xs-12">
-								<q-input v-model="edit_state.title" :rules="[(val: string) => (val && val.length > 0) || '']" outlined input-debounce="0" label="Title">
+								<q-input
+									v-model="edit_state.title"
+									:rules="[(val: string) => (val && val.length > 0) || '']"
+									outlined
+									input-debounce="0"
+									label="Title"
+									list="browsers"
+								>
 								</q-input>
+								<datalist id="browsers">
+									<option value="Customer Success Manager (m/w/d)"></option>
+									<option value="Strategic Partnership Manager (m/w/d)"></option>
+									<option value="Technical Sales Engineer (m/f/d)"></option>
+									<option value="Customer Success Manager (m/w/d)"></option>
+								</datalist>
 							</div>
 						</q-card-section>
 						<q-separator class="q-my-sm" />
@@ -115,8 +133,10 @@ interface JobListings {
 									outlined
 									input-debounce="0"
 									label="Description"
+									hide-bottom-space
 								>
 								</q-input>
+								<q-btn size="xs" flat color="indigo" @click="addTemplate">add template</q-btn>
 							</div>
 						</q-card-section>
 					</q-card>

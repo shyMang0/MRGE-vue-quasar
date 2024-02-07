@@ -58,7 +58,7 @@ function openJobLink(jobId: string) {
 
 				<q-card-section class="q-pt-none">
 					<div class="text-body2">Job Description</div>
-					<div class="text-body2">
+					<div class="text-body2 description">
 						<ul v-if="jobs.jobDescriptions">
 							<li v-for="(jd, i) in jobs.jobDescriptions.jobDescription" :key="i">
 								{{ jd.name }}
@@ -81,4 +81,8 @@ function openJobLink(jobId: string) {
 .my-card
   width: 100%
   max-width: 500px
+
+.description
+  max-height: 350px
+  overflow-y: auto
 </style>
