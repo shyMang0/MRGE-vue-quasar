@@ -63,7 +63,7 @@ function DialogJobClosed(val: boolean) {
 <style lang="sass" scoped>
 .my-card
   width: 100%
-  max-width: 250px
+  max-width: 400px
 
 .description
   max-height: 350px
