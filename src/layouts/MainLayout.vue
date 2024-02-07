@@ -43,7 +43,7 @@ function toggleLeftDrawer() {
 			</q-toolbar>
 		</q-header>
 
-		<q-drawer v-model="leftDrawerOpen" show-if-above bordered :width="200" :breakpoint="700">
+		<q-drawer v-model="leftDrawerOpen" show-if-above bordered :width="200" :breakpoint="1200">
 			<q-list>
 				<q-item-label header> Links </q-item-label>
 

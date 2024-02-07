@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { QForm, useQuasar } from 'quasar'
 import * as JobListingApi from '../../api/jobs'
 
-const props = defineProps({
+defineProps({
 	dialog: {
 		type: Boolean,
 		required: true

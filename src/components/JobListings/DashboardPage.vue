@@ -5,10 +5,7 @@ import DialogPostJob from './DialogPostJob.vue'
 
 const jobListings = ref(<JobListings[]>[])
 const openDialogJob = ref(false)
-// function increment() {
-// 	clickCount.value += 1
-// 	return clickCount.value
-// }
+
 interface JobListings {
 	id: string
 	title: string
@@ -33,14 +30,12 @@ function DialogJobClosed(val: boolean) {
 }
 </script>
 <template>
-	<!-- q-gutter-sm -->
 	<q-btn class="q-ml-xl q-mt-md" outline color="indigo" @click="openDialogJob = true">Create New Job Listing</q-btn>
 	<div class="row q-pa-md q-gutter-sm">
 		<q-card v-for="jobs in jobListings" :key="jobs.id" class="my-card" flat bordered>
 			<q-item>
 				<q-item-section avatar>
 					<q-avatar>
-						<!-- <img src="https://cdn.quasar.dev/img/boy-avatar.png" /> -->
 						<q-icon name="account_circle" />
 					</q-avatar>
 				</q-item-section>
