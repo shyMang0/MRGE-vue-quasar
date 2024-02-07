@@ -41,7 +41,7 @@ function DialogJobClosed(val: boolean) {
 				</q-item-section>
 
 				<q-item-section>
-					<q-item-label class="ellipsis">{{ jobs.title }}</q-item-label>
+					<q-item-label class="ellipsis text-h6">{{ jobs.title }}</q-item-label>
 					<q-item-label class="text-indigo ellipsis"> {{ jobs.created_by }} </q-item-label>
 				</q-item-section>
 			</q-item>

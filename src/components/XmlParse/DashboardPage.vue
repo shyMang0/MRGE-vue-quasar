@@ -14,7 +14,7 @@ async function fetchDashboard() {
 }
 
 function openJobLink(jobId: string) {
-	window.open(`http://example.com/jobs/${jobId}`, '_blank')
+	window.open(`https://mrge-group-gmbh.jobs.personio.de/job/${jobId}?display=de`, '_blank')
 }
 </script>
 <template>
