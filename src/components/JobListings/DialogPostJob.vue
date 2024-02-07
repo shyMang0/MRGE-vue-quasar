@@ -15,7 +15,11 @@ const $q = useQuasar()
 const myForm = ref<QForm | null>(null)
 // DATA
 
-const edit_state = ref({})
+const edit_state = ref<JobListings>({
+	created_by: '',
+	title: '',
+	description: ''
+})
 
 const loading = ref<boolean>(false)
 async function dialogOpened() {
@@ -59,6 +63,14 @@ async function saveChanges() {
 		})
 	}
 	loading.value = false
+}
+
+interface JobListings {
+	id?: string
+	title: string
+	description: string
+	created_by: string
+	validated_at?: string
 }
 </script>
 

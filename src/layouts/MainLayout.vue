@@ -15,7 +15,7 @@ const essentialLinks: EssentialLinkProps[] = [
 		title: 'User Story 1',
 		caption: 'Job Post Notification',
 		icon: 'code',
-		link: '/jobPosts'
+		link: '/jobListings'
 	},
 	{
 		title: 'User Story 2',
