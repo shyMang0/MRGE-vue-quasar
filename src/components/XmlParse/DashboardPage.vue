@@ -3,14 +3,17 @@ import { onMounted, ref } from 'vue'
 import * as XmlJobsApi from '../../api/xml'
 
 const jobListings = ref(<any[]>[])
+const loading = ref(false)
 
 onMounted(async () => {
 	fetchDashboard()
 })
 
 async function fetchDashboard() {
+	loading.value = true
 	const res = await XmlJobsApi.fetchXmlJobs()
 	jobListings.value = res['workzag-jobs']?.position
+	loading.value = false
 }
 
 function openJobLink(jobId: string) {
@@ -23,6 +26,7 @@ function openJobLink(jobId: string) {
 		<q-banner inline-actions rounded class="bg-indigo-3"> https://mrge-group-gmbh.jobs.personio.de/xml </q-banner>
 	</div>
 	<div class="row q-pa-md q-gutter-sm">
+		<h5 v-show="loading">Loading...</h5>
 		<div class="q-pa-md my-card" v-for="jobs in jobListings" :key="jobs.id">
 			<q-card bordered>
 				<q-card-section class="q-pb-none">
