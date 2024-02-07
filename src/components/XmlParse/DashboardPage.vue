@@ -58,7 +58,7 @@ function openJobLink(jobId: string) {
 
 				<q-card-section class="q-pt-xs">
 					<q-chip clickable color="indigo-5" text-color="white" size="small" class="text-capitalize" square> {{ jobs.employmentType }} </q-chip>
-					<q-chip clickable color="blue-7" text-color="white" size="small" class="text-capitalize" square> {{ jobs.schedule }} </q-chip>
+					<q-chip clickable color="blue-8" text-color="white" size="small" class="text-capitalize" square> {{ jobs.schedule }} </q-chip>
 					<div class="text-body1 text-capitalize"><span class="text-caption">Department:</span> {{ jobs.department }}</div>
 					<div class="text-body1 text-capitalize"><span class="text-caption">Occupation Category:</span> {{ jobs.occupationCategory.replace(/_/g, ' ') }}</div>
 					<div class="text-body1 text-capitalize"><span class="text-caption">Occupation:</span> {{ jobs.occupation.replace(/_/g, ' ') }}</div>
