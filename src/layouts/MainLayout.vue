@@ -38,8 +38,7 @@ function toggleLeftDrawer() {
 				<q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
 
 				<q-toolbar-title> {{ route.name ?? 'App' }}</q-toolbar-title>
-
-				<div>Quasar v{{ $q.version }}</div>
+				<div>Mrge</div>
 			</q-toolbar>
 		</q-header>
 

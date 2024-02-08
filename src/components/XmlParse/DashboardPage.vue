@@ -26,7 +26,7 @@ function openJobLink(jobId: string) {
 		<q-banner inline-actions rounded class="bg-indigo-3"> https://mrge-group-gmbh.jobs.personio.de/xml </q-banner>
 	</div>
 	<div class="row q-pa-md q-gutter-sm">
-		<h5 v-show="loading">Loading...</h5>
+		<h5 v-show="loading">Fetching XML and parsing to JSON...</h5>
 		<div class="q-pa-md my-card" v-for="jobs in jobListings" :key="jobs.id">
 			<q-card bordered>
 				<q-card-section class="q-pb-none">
@@ -37,6 +37,7 @@ function openJobLink(jobId: string) {
 				<q-card-section class="q-pt-xs">
 					<q-chip clickable color="indigo-5" text-color="white" size="small" class="text-capitalize" square> {{ jobs.employmentType }} </q-chip>
 					<q-chip clickable color="blue-8" text-color="white" size="small" class="text-capitalize" square> {{ jobs.schedule }} </q-chip>
+					<q-btn color="primary" size="small" class="float-right" outline label="Apply" @click="openJobLink(jobs.id)" />
 					<div class="text-body1 text-capitalize">
 						<span class="text-caption">Department:</span> <span class="text-body2">{{ jobs.department }}</span>
 					</div>
@@ -72,10 +73,10 @@ function openJobLink(jobId: string) {
 					</div>
 				</q-card-section>
 
-				<q-card-actions align="right">
+				<!-- <q-card-actions align="right">
 					<q-btn flat color="primary" label="Apply" @click="openJobLink(jobs.id)" />
 					<q-btn flat color="grey-4" icon="more_vert" />
-				</q-card-actions>
+				</q-card-actions> -->
 			</q-card>
 		</div>
 	</div>
